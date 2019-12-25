@@ -89,8 +89,8 @@ ${project_dir}
 | Network | Test Accuracy(%)| batch_size |
 |---|---|---|
 | VGG19 | 96.00 | 4 |
-| ResNet50 | 94.00 | 32 |
-| InceptionV3 | 80.00 | 32 |
+| ResNet50 | 96.00 | 32 |
+| InceptionV3 | 76.00 | 32 |
 - I has just trained the models for 1 epochs by 'Adam'.
 # Attention
 If the train or test accuracy is low, you can modify the optimizer code to 
