@@ -86,11 +86,11 @@ ${project_dir}
 # TensorboardX
 - You can walk into `log\$(use_model)` directory to monitor the loss. Run `tensorboard --logdir .` then open the browser.
 # Performances
-| Network | Test Accuracy(%)|
-|---|---|
-| VGG19 | 97.00 |
-| ResNet50 | 94.00 |
-| InceptionV3 | 80.00 | 
+| Network | Test Accuracy(%)| batch_size |
+|---|---|---|
+| VGG19 | 96.00 | 4 |
+| ResNet50 | 94.00 | 32 |
+| InceptionV3 | 80.00 | 32 |
 - I has just trained the models for 1 epochs by 'Adam'.
 # Attention
 If the train or test accuracy is low, you can modify the optimizer code to 
