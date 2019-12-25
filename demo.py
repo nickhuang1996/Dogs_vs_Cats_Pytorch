@@ -15,17 +15,17 @@ from network import feature_net
 
 #参数设置
 parser = argparse.ArgumentParser(description='cifar10')
-parser.add_argument('--dataset_dir', default='../dogs_vs_cats/')
+parser.add_argument('--dataset_dir', default='./dogs_vs_cats/')
 parser.add_argument('--checkpoint_dir', default='./checkpoint')
 parser.add_argument('--record_dir', default='./record')
 parser.add_argument('--log_dir', default='./log')
 parser.add_argument('--pre_epoch', default=0, help='begin epoch')
 parser.add_argument('--total_epoch', default=1, help='time for ergodic')
-parser.add_argument('--model', default='inceptionv3', help='model for training')
+parser.add_argument('--model', default='vgg', help='model for training')
 parser.add_argument('--outf', default='./model', help='folder to output images and model checkpoints') #输出结果保存路径
 parser.add_argument('--pre_model', default=False, help='use pre-model')#恢复训练时的模型路径
-parser.add_argument('--batch_size', default=32)
-parser.add_argument('--CenterCropSize', default=299)
+parser.add_argument('--batch_size', default=4)
+parser.add_argument('--CenterCropSize', default=224)
 args = parser.parse_args()
 
 
@@ -71,7 +71,7 @@ plt.imshow(img)#mshow能显示数据归一化到0到1的图像
 
 #分类器工厂
 classifier_factory = {
-    'vgg': 512,
+    'vgg': 2048,
     'resnet50': 2048,
     'inceptionv3': 2048
 }

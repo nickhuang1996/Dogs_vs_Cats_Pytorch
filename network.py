@@ -9,12 +9,12 @@ class feature_net(nn.Module):
         if model == 'vgg':
             vgg = models.vgg19(pretrained=True)
             self.feature = nn.Sequential(*list(vgg.children())[:-1])
-            self.feature.add_module('global average', nn.AvgPool2d(9))
+            self.feature.add_module('global average', nn.AvgPool2d(3))
         elif model == 'inceptionv3':
             inception = models.inception_v3(pretrained=True)
             self.feature = nn.Sequential(*list(inception.children())[:-1])
             self.feature._modules.pop('13')
-            self.feature.add_module('global average', nn.AvgPool2d(35))
+            self.feature.add_module('global average', nn.AvgPool2d(18))
         elif model == 'resnet50':
             resnet = models.resnet50(pretrained=True)
             self.feature = nn.Sequential(*list(resnet.children())[:-1])
